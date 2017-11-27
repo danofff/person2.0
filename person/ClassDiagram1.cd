@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="person.HumanGenerator" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAEAAAAAAAA=</HashCode>
+      <FileName>HumanGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="person.IdGeneratorForAdults" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IdGeneratorForAdults.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="person.Education.College" Collapsed="true">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAQAAAAEAAAAA=</HashCode>
+      <FileName>Education\College.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="person.Education.Education" Collapsed="true">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEAACAAAAAAAAAAAAAAAQAAEgEAAAIAAAAAEAABAA=</HashCode>
+      <FileName>Education\Education.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="person.Education.School" Collapsed="true">
+    <Position X="3.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Education\School.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="person.ModelHuman.Adult" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAIAAAACAAAAAAgCAAAAAgACAAAAAgAAAAAAECAAABA=</HashCode>
+      <FileName>ModelHuman\Adult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="person.ModelHuman.Invalid" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>ModelHuman\Invalid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="person.ModelHuman.Kid" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>ModelHuman\Kid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="person.ModelHuman.Person" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAABQAiAAEAAgAQAAAAEAAgAAAAAAAEIAgA=</HashCode>
+      <FileName>ModelHuman\person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="person.ModelIdentity.Conviction" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModelIdentity\Conviction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="person.ModelIdentity.ID" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAQAAAAEAAAAAAAAAAQAQBAAAAAQAAAAA=</HashCode>
+      <FileName>ModelIdentity\ID.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="person.Education.level" Collapsed="true">
+    <Position X="10" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAIAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Education\School.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="person.ModelHuman.invalid" Collapsed="true">
+    <Position X="8.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABAAAAAAAAAAAAAgEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModelHuman\Invalid.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="person.ModelHuman.sex" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>ModelHuman\person.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
