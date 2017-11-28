@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using person.Education;
+using person.ModelIdentity;
 
 namespace person.ModelHuman
 {
@@ -42,6 +43,14 @@ namespace person.ModelHuman
             get { return colleges; }
             set { colleges = value; }
         }
+        private List<Conviction> convictions=new List<Conviction>();
+
+        public List<Conviction> Convictions
+        {
+            get { return convictions; }
+            set { convictions = value; }
+        }
+
         //конструктор
         public Adult():base()
         {
@@ -77,7 +86,14 @@ namespace person.ModelHuman
             foreach(var item in schools)
             {
                 item.printEducationInfo();
-
+            }
+            foreach (var item in Colleges)
+            {
+                item.printEducationInfo();
+            }
+            foreach (var item in Convictions)
+            {
+                Console.WriteLine(item);
             }
             Console.ResetColor();
         }
