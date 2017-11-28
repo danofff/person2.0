@@ -16,13 +16,13 @@ namespace person.ModelHuman
             get { return kids; }
             set { kids = value; }
         }
-        private bool isMarried;
+        private bool isMarried=false;
         public bool IsMarried
         {
             get { return isMarried; }
             set { isMarried = value; }
         }
-        private bool isWorking;
+        private bool isWorking=false;
 
         public bool IsWorking
         {

@@ -48,6 +48,8 @@ namespace person.ModelHuman
             get { return parents; }
             set { parents = value; }
         }
+
+        protected invalid inv { get; set; } = invalid.none;
         public Person()
         {
             Ids = new List<ID>();

@@ -23,5 +23,12 @@ namespace person.ModelHuman
         {
             this.Benefit = benefit;
         }
+
+        public override void printFullInfo()
+        {
+            base.printFullInfo();
+            Console.WriteLine("Invalid group: {0}",this.inv);
+            Console.WriteLine("Benefints: {0:c}",this.Benefit);
+        }
     }
 }
