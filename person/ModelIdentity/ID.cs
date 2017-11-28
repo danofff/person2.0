@@ -6,46 +6,30 @@ using System.Threading.Tasks;
 
 namespace person.ModelIdentity
 {
+    /*
+     * ПОЖАЛУЙСТА
+     * Не используй такие имена для класса!!!
+     */
     public class ID
     {
-        private string number;
+        public string Number { get; set; }
+        public DateTime Date { get; set; }
 
-        public string Number
-        {
-            get { return number; }
-            set { number = value; }
-        }
-        private DateTime date;
+        public DateTime ExpireDate { get; set; }
 
-        public DateTime Date
-        {
-            get { return date; }
-            set { date = value; }
-        }
-        private DateTime expireDate;
-
-        public DateTime ExpireDate
-        {
-            get { return expireDate; }
-            set { expireDate = value; }
-        }
-
-        public ID():this("000000000000")
-        {
-
-        }
-        public ID(string number):this(number,DateTime.Now.AddYears(-10))
-        {
-            this.Number = number;
-        }
+        public ID():this("000000000000"){}
+        public ID(string number):this(number,DateTime.Now.AddYears(-10)){}
         public ID(string number,DateTime date)
         {
-            this.Number = number;
-            this.Date = date;
-            this.ExpireDate = this.Date.AddYears(10);
+            Number = number;
+            Date = date;
+            ExpireDate = this.Date.AddYears(10);
         }
 
-        public void printIdInfo()
+        /// <summary>
+        /// Методвывода информации
+        /// </summary>
+        public void PrintIdInfo()
         {
             Console.WriteLine("Number: {0}",this.Number);
             Console.WriteLine("Date of issue: {0:d}", this.Date);

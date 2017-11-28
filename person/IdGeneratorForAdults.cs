@@ -10,7 +10,7 @@ namespace person
     class IdGeneratorForAdults
     {
         private static Random rnd = new Random();
-        public ID IDGenerator()
+        public ID IdGenerator()
         {
             ID randomId = new ID();
             DateTime idStart = new DateTime();

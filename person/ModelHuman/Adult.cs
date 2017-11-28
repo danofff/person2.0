@@ -8,72 +8,30 @@ using person.ModelIdentity;
 
 namespace person.ModelHuman
 {
-    public class Adult:Person
+    public class Adult : Person
     {
-        private List<Kid> kids;
-
-        public List<Kid> Kids
-        {
-            get { return kids; }
-            set { kids = value; }
-        }
-        private bool isMarried=false;
-        public bool IsMarried
-        {
-            get { return isMarried; }
-            set { isMarried = value; }
-        }
-        private bool isWorking=false;
-
-        public bool IsWorking
-        {
-            get { return isWorking; }
-            set { isWorking = value; }
-        }
-        private List<School> schools;
-
-        public List<School> Schools
-        {
-            get { return schools; }
-            set { schools = value; }
-        }
-        private List<College> colleges;
-        public List<College> Colleges
-        {
-            get { return colleges; }
-            set { colleges = value; }
-        }
-        private List<Conviction> convictions=new List<Conviction>();
-
-        public List<Conviction> Convictions
-        {
-            get { return convictions; }
-            set { convictions = value; }
-        }
+        public List<Kid> Kids { get; set; }
+        public bool IsMarried { get; set; } = false;
+        public bool IsWorking { get; set; } = false;
+        public List<School> Schools { get; set; }
+        public List<College> Colleges { get; set; }
+        public List<Conviction> Convictions { get; set; }
 
         //конструктор
-        public Adult():base()
-        {
-            Kids = new List<Kid>();
-            Schools = new List<School>();
-            Colleges = new List<College>();
+        public Adult():this(new List<School>()){}
+        public Adult(List<School> schools):this(schools,new List<College>()){}
+        public Adult(List<School> schools, List<College> colleges):this(schools,colleges,new List<Kid>()){}
 
-        }
-        public Adult(List<School> schools):this(schools,new List<College>())
+        //ПОСМОТРИ На эту конструкцию
+        public Adult(List<School> schools, List<College> colleges,List<Kid> kids) : base()//<<<<<<---------
         {
-            this.Schools = schools;
+            Schools = schools;
+            Colleges = colleges;
         }
-        public Adult(List<School> schools, List<College> colleges):this(schools,colleges,new List<Kid>())
+
+        public override void PrintFullInfo()
         {
-            this.Colleges = colleges;
-        }
-        public Adult(List<School> schools, List<College> colleges,List<Kid> kids)
-        {
-            this.Kids = kids;
-        }
-        public override void printFullInfo()
-        {
-            base.printFullInfo();
+            base.PrintFullInfo();
             Console.WriteLine("Kids Info :");
             foreach (var item in this.Kids)
             {
@@ -83,18 +41,16 @@ namespace person.ModelHuman
             }
             Console.WriteLine("Married: {0}", this.IsMarried ? "yes" : "no");
             Console.WriteLine("Working: {0}", this.IsWorking ? "yes" : "no");
-            foreach(var item in schools)
-            {
-                item.printEducationInfo();
-            }
+
+            foreach(var item in Schools)
+                item.PrintEducationInfo();
+
             foreach (var item in Colleges)
-            {
-                item.printEducationInfo();
-            }
+                item.PrintEducationInfo();
+
             foreach (var item in Convictions)
-            {
                 Console.WriteLine(item);
-            }
+
             Console.ResetColor();
         }
     }

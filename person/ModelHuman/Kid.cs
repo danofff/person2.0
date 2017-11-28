@@ -9,31 +9,24 @@ namespace person.ModelHuman
 {
     public class Kid : Person
     {
+        public List<School> Schs { get; set; }
+
         public Kid()
         {
-            schs = new List<School>();
+            Schs = new List<School>();
         }
-        private List<School> schs;
-        public List<School> Schs
+
+        public override void PrintFullInfo()
         {
-            get { return schs; }
-            set { schs = value; }
-        }
-        public override void printFullInfo()
-        {
-            base.printFullInfo();
+            base.PrintFullInfo();
+
             Console.WriteLine("Schools info: ");
-            if (schs.Count != 0)
-            {
+
+            if (Schs.Count != 0)
                 for (int i = 0; i < this.Schs.Count; i++)
-                {
-                    Schs[i].printEducationInfo();
-                }
-            }
+                    Schs[i].PrintEducationInfo();
             else
-            {
                 Console.WriteLine("No data");
-            }
         }
     }
 }

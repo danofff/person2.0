@@ -8,35 +8,25 @@ namespace person.Education
 {
     public class College:Education
     {
-        private string prof;
-        public string Prof
-        {
-            get { return prof; }
-            set { prof = value; }
-        }
-        private string faculty;
-        public string Faculty
-        {
-            get { return faculty; }
-            set { faculty = value; }
-        }
+        public string Prof { get; set; }
+        public string Faculty { get; set; }
 
         public College() : base() { }
-        public College(string name, string faculty,string profession):this(name,Convert.ToDateTime("01.09.1900"), Convert.ToDateTime("01.06.1905"))
+        public College(string name, string faculty,string profession)
+            :this(name, faculty, profession, DateTime.MinValue, DateTime.MinValue){}
+
+        public College(string name, string faculty, string profession, DateTime stDate, DateTime gradDate)
         {
-            this.Name = name;
-            this.Faculty = faculty;
-            this.Prof = profession;
+            Faculty = faculty;
+            Prof = profession;
+            Name = name;
+            StartDate = stDate;
+            GraduateDate = gradDate;
         }
-        public College(string name, DateTime stDate, DateTime gradDate)
+
+        public override void PrintEducationInfo()
         {
-            this.Name = name;
-            this.StartDate = stDate;
-            this.GraduateDate = gradDate;
-        }
-        public override void printEducationInfo()
-        {
-            base.printEducationInfo();
+            base.PrintEducationInfo();
             Console.WriteLine("Faculty: {0}",this.Faculty);
             Console.WriteLine("Profession: {0}",this.Prof);
         }

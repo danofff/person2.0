@@ -7,28 +7,25 @@ using System.Threading.Tasks;
 namespace person.ModelHuman
 {
     public enum invalid { first, second, third, none };
-    class Invalid:Adult
+
+    public class Invalid : Adult
     {
-        private double benefit;
-        public double Benefit
-        {
-            get { return benefit; }
-            set { benefit = value; }
-        }
+        public double Benefit { get; set; }
+        public invalid invalid { get; set; }
+
         public Invalid():this(invalid.none) { }
-        public Invalid(invalid inv):this(inv,0)
-        {
-        }
+        public Invalid(invalid inv):this(inv,0){}
         public Invalid(invalid inv, double benefit)
         {
-            this.Benefit = benefit;
+            invalid = inv;
+            Benefit = benefit;
         }
 
-        public override void printFullInfo()
+        public override void PrintFullInfo()
         {
-            base.printFullInfo();
-            Console.WriteLine("Invalid group: {0}",this.inv);
-            Console.WriteLine("Benefints: {0:c}",this.Benefit);
+            base.PrintFullInfo();
+            Console.WriteLine("Invalid group: {0}",inv);
+            Console.WriteLine("Benefints: {0:c}",Benefit);
         }
     }
 }

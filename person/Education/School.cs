@@ -7,32 +7,25 @@ using System.Threading.Tasks;
 namespace person.Education
 {
     public enum level { elementary, middle, high}
+
     public class School:Education
     {
-        private level lev;
-
-        public level Lev
-        {
-            get { return lev; }
-            set { lev = value; }
-        }
+        public level Lev { get; set; }
         //constructors
         public School() : base() { }
-        public School(string name, level lev):this(name,Convert.ToDateTime("01.09.1900"), Convert.ToDateTime("01.06.1910"))
+        public School(string name, level lev)
+            :this(name, lev, DateTime.MinValue, DateTime.MinValue){}
+        public School(string name,level lev, DateTime stDate,DateTime gradDate)
         {
-            this.Name = name;
-            this.Lev = lev;
-        }
-        public School(string name,DateTime stDate,DateTime gradDate)
-        {
-            this.Name = name;
-            this.StartDate = stDate;
-            this.GraduateDate = gradDate;
+            Lev = lev;
+            Name = name;
+            StartDate = stDate;
+            GraduateDate = gradDate;
         }
        
-        public override void printEducationInfo()
+        public override void PrintEducationInfo()
         {
-            base.printEducationInfo();
+            base.PrintEducationInfo();
             Console.WriteLine($"Level: {this.Lev}");
         }
 

@@ -8,76 +8,39 @@ namespace person.Education
 {
     public abstract class Education
     {
-        private string name;
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+        public string Name { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime GraduateDate { get; set; }
+        public string Adress { get; set; }
+        public List<string> PhoneNumbers { get; set; }
 
-        private DateTime startDate;
-        public DateTime StartDate
-        {
-            get { return startDate; }
-            set { startDate = value; }
-        }
-
-        private DateTime graduateDate;
-        public DateTime GraduateDate
-        {
-            get { return graduateDate; }
-            set { graduateDate = value; }
-        }
-
-        private string adress;
-        public string Adress
-        {
-            get { return adress; }
-            set { adress = value; }
-        }
-        private List<string> phoneNumbers;
-        public List<string> PhoneNumbers
-        {
-            get { return phoneNumbers; }
-            set { phoneNumbers=value; }
-        }
-        public Education():this("Noname") { }
-        public Education (string name):this(name, Convert.ToDateTime("01.09.1900"))
+        protected Education():this("Noname") { }
+        protected Education (string name):this(name, DateTime.MinValue) {}
+        protected Education(string name, DateTime startDate):this(name, startDate, DateTime.MinValue) {}
+        protected Education(string name, DateTime startDate, DateTime graduateDate)
         {
             PhoneNumbers = new List<string>();
             Name = name;
+            StartDate = startDate;
+            GraduateDate = graduateDate;
         }
-        public Education(string name, DateTime startDate):this(name, startDate,Convert.ToDateTime("01.06.1910"))
+
+        /// <summary>
+        /// Моетод, для вывода информации об образованиия
+        /// </summary>
+        public virtual void PrintEducationInfo()
         {
-            PhoneNumbers = new List<string>();
-            this.Name = name;
-            this.StartDate = startDate;
-        }
-        public Education(string name, DateTime startDate, DateTime graduateDate)
-        {
-            PhoneNumbers = new List<string>();
-            this.Name = name;
-            this.StartDate = startDate;
-            this.GraduateDate = graduateDate;
-        }
-        public virtual void printEducationInfo()
-        {
-            Console.WriteLine($"Name: {this.Name}");
-            Console.WriteLine($"Adress: {this.Adress}");
-            Console.WriteLine("Enterance date: {0:d}", this.StartDate);
-            Console.WriteLine("Graduate date: {0:d}", this.GraduateDate);
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Adress: {Adress}");
+            Console.WriteLine("Enterance date: {0:d}", StartDate);
+            Console.WriteLine("Graduate date: {0:d}", GraduateDate);
             Console.WriteLine("Phone numbers: ");
-            if (this.PhoneNumbers.Count != 0)
-            {
-                for (int i = 0; i < this.PhoneNumbers.Count; i++)
-                {
-                    Console.WriteLine(this.PhoneNumbers[i]);
-                }
-            }
+
+            if (PhoneNumbers.Count != 0)
+                foreach (string t in PhoneNumbers)
+                    Console.WriteLine(t);
             else
-            {
                 Console.WriteLine("No data");
-            }
         }
     }
 }

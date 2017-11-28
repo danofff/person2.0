@@ -10,78 +10,85 @@
   <Class Name="person.IdGeneratorForAdults" Collapsed="true">
     <Position X="10" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IdGeneratorForAdults.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="person.Education.College" Collapsed="true">
     <Position X="5.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAQAAAAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAIAQAAAAAAAAAA=</HashCode>
       <FileName>Education\College.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="person.Education.Education" Collapsed="true">
     <Position X="4.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAEAACAAAAAAAAAAAAAAAQAAEgEAAAIAAAAAEAABAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAQAAAgAAAIAAAAAAEAABAA=</HashCode>
       <FileName>Education\Education.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="person.Education.School" Collapsed="true">
-    <Position X="3.5" Y="5.75" Width="1.5" />
+    <Position X="3.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>Education\School.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="person.ModelHuman.Adult" Collapsed="true">
-    <Position X="5.75" Y="1.75" Width="1.5" />
+    <Position X="5.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAIAAAACAAAAAAgCAAAAAgACAAAAAgAAAAAAECAAABA=</HashCode>
+      <HashCode>AAAAAAACAAAAAAACAAAIAAACAACAAAAAAAAAACAAABA=</HashCode>
       <FileName>ModelHuman\Adult.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="person.ModelHuman.Invalid" Collapsed="true">
-    <Position X="5.75" Y="3.25" Width="1.5" />
+    <Position X="5.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>ModelHuman\Invalid.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="person.ModelHuman.Kid" Collapsed="true">
-    <Position X="3.5" Y="1.75" Width="1.5" />
+    <Position X="3" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <HashCode>AAAAIAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ModelHuman\Kid.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="person.ModelHuman.Person" Collapsed="true">
     <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgCAAAAAAABQAiAAEAAgAQAAAAEAAgAAAAAAAEIAgA=</HashCode>
+      <HashCode>AAACIAAAAAAAAACAAEAIAAQAAAAAAAAAAAAIAAEIAAA=</HashCode>
       <FileName>ModelHuman\person.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="person.ModelIdentity.Conviction" Collapsed="true">
     <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIEBAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ModelIdentity\Conviction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="person.ModelIdentity.ID" Collapsed="true">
     <Position X="8.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAQAAAAEAAAAAAAAAAQAQBAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAEAAAAAAAAAAAAAEAAAAAAAAAAAAABAEAAAAAAAAA=</HashCode>
       <FileName>ModelIdentity\ID.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="person.Education.level" Collapsed="true">
-    <Position X="10" Y="2.75" Width="1.5" />
+    <Position X="8.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAIAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Education\School.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="person.ModelHuman.Sex" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>ModelHuman\person.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="person.ModelHuman.invalid" Collapsed="true">
@@ -89,13 +96,6 @@
     <TypeIdentifier>
       <HashCode>AQABAAAAAAAAAAAAAgEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ModelHuman\Invalid.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="person.ModelHuman.sex" Collapsed="true">
-    <Position X="8.25" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
-      <FileName>ModelHuman\person.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
