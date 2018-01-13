@@ -13,16 +13,7 @@ namespace PoliceMaster
     public class MasterPolice
     {
         private AssemblyMaster am = new AssemblyMaster();
-
-        public void CreatePoliceStation()
-        {
-            PoliceStation ps = new PoliceStation();
-            ps.city = am.GetCities()[0];
-            ps.CodePoliceStation = 001;
-            ps.NamePoliceStation = "";
-            CreateStation(ps);
-            
-        }
+        
 
         #region CREATE Police Station
         public string pathToStation { get; set; }
