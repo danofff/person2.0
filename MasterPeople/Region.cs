@@ -12,6 +12,6 @@ namespace MasterPeople
         public string RegionName { get; set; }
         public int Population { get; set; }
         public City CapitalRegion { get; set; }
-        List<City> cities { get; set; }
+        public List<City> cities { get; set; }
     }
 }
