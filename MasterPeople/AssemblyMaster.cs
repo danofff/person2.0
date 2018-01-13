@@ -43,7 +43,7 @@ namespace MasterPeople
         /// Проверка на существование файла региона
         /// </summary>
         /// <returns></returns>
-        private List<Region> GetRegion()
+        public List<Region> GetRegion()
         {
             List<Region> regions = new List<Region>();
             XmlSerializer formatter = new XmlSerializer(typeof(List<Region>));
@@ -81,7 +81,7 @@ namespace MasterPeople
                 return false;
             }
         }
-        private List<City> GetCities()
+        public List<City> GetCities()
         {
             List<City> cities = new List<City>();      
             XmlSerializer formatter = new XmlSerializer(typeof(List<City>));
@@ -100,12 +100,12 @@ namespace MasterPeople
 
         #region CREATE CITY SEVICE
         public string pathToCityServices { get; set; }
-        public bool CreateCityCervise(CityService cityService)
+        public bool CreateCityCervise(PoliceStation cityService)
         {
-            List<CityService> cityServices = GetCitySrvices();
+            List<PoliceStation> cityServices = GetCitySrvices();
             cityServices.Add(cityService);
 
-            XmlSerializer formatter = new XmlSerializer(typeof(List<CityService>));
+            XmlSerializer formatter = new XmlSerializer(typeof(List<PoliceStation>));
             try
             {
                 using (FileStream fs = new FileStream(pathToCityServices, FileMode.OpenOrCreate))
@@ -119,19 +119,19 @@ namespace MasterPeople
                 return false;
             }
         }
-        private List<CityService> GetCitySrvices()
+        public List<PoliceStation> GetCitySrvices()
         {
-            List<CityService> cityServices = new List<CityService>();
-            XmlSerializer formatter = new XmlSerializer(typeof(List<CityService>));
+            List<PoliceStation> cityServices = new List<PoliceStation>();
+            XmlSerializer formatter = new XmlSerializer(typeof(List<PoliceStation>));
             FileInfo fi = new FileInfo(pathToCityServices);
             if (fi.Exists)
             {
                 using (FileStream fs = new FileStream(pathToCityServices, FileMode.OpenOrCreate))
                 {                    
-                    cityServices=(List<CityService>)formatter.Deserialize(fs);
+                    cityServices=(List<PoliceStation>)formatter.Deserialize(fs);
                 }
             }
-            return cityServices == null ? new List<CityService>() : cityServices;
+            return cityServices == null ? new List<PoliceStation>() : cityServices;
         }
         #endregion
     }

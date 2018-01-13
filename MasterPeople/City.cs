@@ -12,7 +12,7 @@ namespace MasterPeople
         public string CityName { get; set; }
         public int Population { get; set; }
         public int Area { get; set; }
-        public List<CityService> Services { get; set; }
+        public List<PoliceStation> Services { get; set; }
         public string Coordinates { get; set; }
     }
 }

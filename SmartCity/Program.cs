@@ -14,7 +14,7 @@ namespace SmartCity
             AssemblyMaster am = new AssemblyMaster();
             am.pathToCityServices = "smartCityService.xml";
 
-            CityService cs = new CityService();
+            PoliceStation cs = new PoliceStation();
             cs.ServiceName = "Полиция";
             cs.SeviceCode = 102;
             am.CreateCityCervise(cs);
@@ -24,7 +24,7 @@ namespace SmartCity
             city.CityName = "Алматы";
             city.Population = 1787964;
             city.Area = 682;
-            city.Services = new List<CityService> { cs };
+            city.Services = new List<PoliceStation> { cs };
             am.CreateCity(city);
 
             am.pathToRegion = "smartCityRegion.xml";

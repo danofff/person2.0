@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MasterPeople
 {
     [Serializable]
-    public class CityService
+    public class PoliceStation
     {
         public int SeviceCode { get; set; }
         public string ServiceName { get; set; }
