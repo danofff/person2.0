@@ -10,7 +10,7 @@ using System.IO;
 
 namespace PoliceMaster
 {
-    class MasterPolice
+    public class MasterPolice
     {
         private AssemblyMaster am = new AssemblyMaster();
 
@@ -68,9 +68,12 @@ namespace PoliceMaster
 
         public void AddPolicePeopleToStation(int codePs, PoliceStation station)
         {
+            PolicePeople people=null;
             List<PoliceStation> policeStations = GetStations();
             PoliceStation st = policeStations.FirstOrDefault(f => f.CodePoliceStation == codePs);
-
+            policeStations.Remove(station);
+            station.workers.Add(people);
+            CreateStation(null, policeStations);
 
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MasterPeople;
+using PoliceMaster;
 
 namespace SmartCity
 {
@@ -14,7 +15,7 @@ namespace SmartCity
             AssemblyMaster am = new AssemblyMaster();
             am.pathToCityServices = "smartCityService.xml";
 
-            PoliceStation cs = new PoliceStation();
+            CityService cs = new CityService();
             cs.ServiceName = "Полиция";
             cs.SeviceCode = 102;
             am.CreateCityCervise(cs);
@@ -24,7 +25,7 @@ namespace SmartCity
             city.CityName = "Алматы";
             city.Population = 1787964;
             city.Area = 682;
-            city.Services = new List<PoliceStation> { cs };
+            city.Services = new List<CityService> { cs };
             am.CreateCity(city);
 
             am.pathToRegion = "smartCityRegion.xml";
@@ -35,6 +36,13 @@ namespace SmartCity
             region.cities = null;
             am.CreateRegion(region);
 
+            MasterPolice pm = new MasterPolice();
+            pm.pathToStation = "policeStations.xml";
+            PoliceStation ps = new PoliceStation();
+            ps.city = am.GetCities()[0];
+            ps.CodePoliceStation=001;
+            ps.NamePoliceStation = "Тимирязева";
+            pm.CreateStation(ps);
 
         }
     }

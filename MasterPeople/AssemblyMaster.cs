@@ -100,12 +100,12 @@ namespace MasterPeople
 
         #region CREATE CITY SEVICE
         public string pathToCityServices { get; set; }
-        public bool CreateCityCervise(PoliceStation cityService)
+        public bool CreateCityCervise(CityService cityService)
         {
-            List<PoliceStation> cityServices = GetCitySrvices();
+            List<CityService> cityServices = GetCitySrvices();
             cityServices.Add(cityService);
 
-            XmlSerializer formatter = new XmlSerializer(typeof(List<PoliceStation>));
+            XmlSerializer formatter = new XmlSerializer(typeof(List<CityService>));
             try
             {
                 using (FileStream fs = new FileStream(pathToCityServices, FileMode.OpenOrCreate))
@@ -119,19 +119,19 @@ namespace MasterPeople
                 return false;
             }
         }
-        public List<PoliceStation> GetCitySrvices()
+        public List<CityService> GetCitySrvices()
         {
-            List<PoliceStation> cityServices = new List<PoliceStation>();
-            XmlSerializer formatter = new XmlSerializer(typeof(List<PoliceStation>));
+            List<CityService> cityServices = new List<CityService>();
+            XmlSerializer formatter = new XmlSerializer(typeof(List<CityService>));
             FileInfo fi = new FileInfo(pathToCityServices);
             if (fi.Exists)
             {
                 using (FileStream fs = new FileStream(pathToCityServices, FileMode.OpenOrCreate))
                 {                    
-                    cityServices=(List<PoliceStation>)formatter.Deserialize(fs);
+                    cityServices=(List<CityService>)formatter.Deserialize(fs);
                 }
             }
-            return cityServices == null ? new List<PoliceStation>() : cityServices;
+            return cityServices == null ? new List<CityService>() : cityServices;
         }
         #endregion
     }

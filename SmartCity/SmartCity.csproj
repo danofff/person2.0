@@ -54,6 +54,10 @@
       <Project>{3dbb36fc-0841-4fb5-b58f-207d2f1c1aba}</Project>
       <Name>MasterPeople</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PoliceMaster\PoliceMaster.csproj">
+      <Project>{436ae14c-d5e4-45b0-9233-4cdc878cd9ad}</Project>
+      <Name>PoliceMaster</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,7 +9,7 @@ using person.ModelHuman;
 
 namespace PoliceMaster
 {
-    class PolicePeople:Adult
+    public class PolicePeople:Adult
     {
         public PolicePeople()
         {

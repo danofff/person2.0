@@ -8,12 +8,13 @@ using person;
 
 namespace PoliceMaster
 {
-    class PoliceStation
+    public class PoliceStation
     {
         public string NamePoliceStation { get; set; }
         public int CodePoliceStation { get; set; }
         public List<PolicePeople> workers { get; set; } = new List<PolicePeople>();
         public City city { get; set; }
+
 
     }
 }
