@@ -21,8 +21,6 @@ namespace person.ModelHuman
 
         protected invalid inv { get; set; } = invalid.none;
 
-        //Потому чтоты не можеш создать экзэмпляр абстрактного класса!
-        //Поэтому protected
         protected Person()
         {
             Ids = new List<ID>();
@@ -61,7 +59,7 @@ namespace person.ModelHuman
             Console.WriteLine("Parents Info: ");
             if (Parents.Count == 0) return;
             //посмотри как этоможно обыграть .. если нет данных 
-            //нобудь осторожен в этотммент произойдет выход из этого метода, 
+            //но будь осторожен в этотммент произойдет выход из этого метода, 
             //все что ниже будет проигнорировано
             foreach (var item in Parents)
             {

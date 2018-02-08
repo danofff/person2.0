@@ -9,13 +9,16 @@ using person.ModelHuman;
 
 namespace PoliceMaster
 {
+    public enum rang { officer, detective, sergeant, lieutenant, Captain };
     public class PolicePeople:Adult
     {
         public PolicePeople()
         {
-            this.IsWorking = true;
+           IsWorking = true;
+           readyForJob = true;
         }
-        public string Rang { get; set; }
+        public rang Rang { get; set; }
         public double Salary { get; set; }
+        public bool readyForJob { get; set; }
     }
 }
