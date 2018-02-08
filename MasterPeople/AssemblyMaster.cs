@@ -32,7 +32,7 @@ namespace MasterPeople
         }
         public City GetCity()
         {
-            City city = new City();      
+            City city = null;      
             XmlSerializer formatter = new XmlSerializer(typeof(City));
 
             FileInfo fi = new FileInfo(pathToCity);
@@ -43,7 +43,7 @@ namespace MasterPeople
                     city=((City)formatter.Deserialize(fs));
                 }
             }
-            return city == null ? new City() : city;
+            return city;
         }
         #endregion
 

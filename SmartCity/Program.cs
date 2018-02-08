@@ -21,7 +21,8 @@ namespace SmartCity
                        
             AssemblyMaster am = new AssemblyMaster();
             //am.pathToCityServices = "smartCityService.xml";
-            am.pathToCities = "city.xml";
+            am.pathToCity = "city.xml";
+            am.GetCity();
             
 
            
