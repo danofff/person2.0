@@ -18,7 +18,7 @@ namespace MasterPeople
             HasPoliceStation = false;
         }
         public PoliceStation PoliceStat { get; set; } = null;
-        public List<Person> citizen { get; set; } = new List<Person>();
+        public List<Person> Citizens { get; set; } = new List<Person>();
 
     }
 }

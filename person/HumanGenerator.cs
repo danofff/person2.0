@@ -46,7 +46,7 @@ namespace person
         }
 
         //date burth generator
-        public DateTime GenerateBirthDate(Person p)
+        private DateTime GenerateBirthDate(Person p)
         {
             Random rnd = new Random();
             DateTime date = new DateTime();

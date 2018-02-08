@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using MasterPeople;
 using PoliceMaster;
 using person.ModelHuman;
 using person;
 using static System.Console;
+
 
 namespace SmartCity
 {
@@ -15,21 +17,23 @@ namespace SmartCity
     {
         static void Main(string[] args)
         {
-                                 
+                      
+                       
             AssemblyMaster am = new AssemblyMaster();
-            am.pathToCityServices = "smartCityService.xml";
+            //am.pathToCityServices = "smartCityService.xml";
+            am.pathToCities = "city.xml";
+            
 
-            //CREATE DISTRICTS
+           
+            /*PoliceStation ps1 = new PoliceStation();
+            ps1.NamePoliceStation = "Полиция";
+            ps1.CodePoliceStation=102;
 
-            CityService cs = new CityService();
-            cs.ServiceName = "Полиция";
-            cs.SeviceCode = 102;
-            am.CreateCityCervise(cs);
-
-            am.pathToCities = "smartCityCities.xml";
+            am.pathToCities = "smartCityCities.xml";*/
 
 
-
+           
+            
             // create city
             City city = new City();
             city.CityName = "Алматы";

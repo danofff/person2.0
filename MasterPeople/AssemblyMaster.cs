@@ -12,19 +12,16 @@ namespace MasterPeople
     {
         
         #region CREATE CITY
-        public string pathToCities { get; set; }
+        public string pathToCity { get; set; }
         public bool CreateCity(City city)
         {
-            List<City> cities = GetCities();
-
-            cities.Add(city);
-
-            XmlSerializer formatter = new XmlSerializer(typeof(List<City>));
+                      
+            XmlSerializer formatter = new XmlSerializer(typeof(City));
             try
             {
-                using (FileStream fs = new FileStream(pathToCities, FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(pathToCity, FileMode.OpenOrCreate))
                 {
-                    formatter.Serialize(fs, cities);
+                    formatter.Serialize(fs, city);
                 }
                 return true;
             }
@@ -33,20 +30,20 @@ namespace MasterPeople
                 return false;
             }
         }
-        public List<City> GetCities()
+        public City GetCity()
         {
-            List<City> cities = new List<City>();      
-            XmlSerializer formatter = new XmlSerializer(typeof(List<City>));
+            City city = new City();      
+            XmlSerializer formatter = new XmlSerializer(typeof(City));
 
-            FileInfo fi = new FileInfo(pathToCities);
+            FileInfo fi = new FileInfo(pathToCity);
             if (fi.Exists)
             {
-                using (FileStream fs = new FileStream(pathToCities, FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(pathToCity, FileMode.OpenOrCreate))
                 {
-                    cities=(List<City>)formatter.Deserialize(fs);
+                    city=((City)formatter.Deserialize(fs));
                 }
             }
-            return cities == null ? new List<City>() : cities;
+            return city == null ? new City() : city;
         }
         #endregion
 
