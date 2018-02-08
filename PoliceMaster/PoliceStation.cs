@@ -8,8 +8,10 @@ using person;
 
 namespace PoliceMaster
 {
-    public class PoliceStation
+    [Serializable]
+    public class PoliceStation:CityService
     {
+        public int districtNumber { get; set; }
         public string NamePoliceStation { get; set; }
         public int CodePoliceStation { get; set; }
         public List<PolicePeople> workers { get; set; } = new List<PolicePeople>();

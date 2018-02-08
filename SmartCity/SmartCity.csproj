@@ -54,6 +54,10 @@
       <Project>{3dbb36fc-0841-4fb5-b58f-207d2f1c1aba}</Project>
       <Name>MasterPeople</Name>
     </ProjectReference>
+    <ProjectReference Include="..\person\person.csproj">
+      <Project>{c0504bd6-877b-4724-992a-38005de8f1b2}</Project>
+      <Name>person</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PoliceMaster\PoliceMaster.csproj">
       <Project>{436ae14c-d5e4-45b0-9233-4cdc878cd9ad}</Project>
       <Name>PoliceMaster</Name>

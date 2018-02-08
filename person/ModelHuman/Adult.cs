@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using person.Education;
 using person.ModelIdentity;
-using MasterCrime;
 
 namespace person.ModelHuman
 {
@@ -16,7 +15,7 @@ namespace person.ModelHuman
         public bool IsWorking { get; set; } = false;
         public List<School> Schools { get; set; }
         public List<College> Colleges { get; set; }
-        public List<Conviction> Convictions { get; set; } = new List<Conviction>();
+        public List<Conviction> Convictions { get; set; }
 
         //конструктор
         public Adult():this(new List<School>()){}
@@ -28,6 +27,8 @@ namespace person.ModelHuman
         {
             Schools = schools;
             Colleges = colleges;
+            Convictions = new List<Conviction>();
+            Kids = kids;
         }
 
         public override void PrintFullInfo()

@@ -47,8 +47,9 @@
     <Compile Include="Education\Education.cs" />
     <Compile Include="Education\School.cs" />
     <Compile Include="HumanGenerator.cs" />
-    <Compile Include="IdGeneratorForAdults.cs" />
+    <Compile Include="ModelHuman\IdGeneratorForAdults.cs" />
     <Compile Include="ModelHuman\Adult.cs" />
+    <Compile Include="ModelHuman\Conviction.cs" />
     <Compile Include="ModelHuman\Invalid.cs" />
     <Compile Include="ModelHuman\Kid.cs" />
     <Compile Include="ModelHuman\person.cs" />
@@ -57,12 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MasterCrime\MasterCrime.csproj">
-      <Project>{a4e4ee22-3797-4feb-8ede-4200e3ed5c45}</Project>
-      <Name>MasterCrime</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

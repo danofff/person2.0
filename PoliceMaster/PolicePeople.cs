@@ -12,13 +12,31 @@ namespace PoliceMaster
     public enum rang { officer, detective, sergeant, lieutenant, Captain };
     public class PolicePeople:Adult
     {
-        public PolicePeople()
+        public PolicePeople():base()
         {
            IsWorking = true;
-           readyForJob = true;
+           freeStatus = true;
         }
         public rang Rang { get; set; }
         public double Salary { get; set; }
-        public bool readyForJob { get; set; }
+        public bool freeStatus { get; set; }
+
+
+        public override void PrintShortInfo()
+        {
+            base.PrintShortInfo();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"Rang: {Rang}");
+            Console.WriteLine("Is free: {0}", this.freeStatus ? "yes" : "no");
+            Console.ResetColor();
+        }
+        public override void PrintFullInfo()
+        {
+            base.PrintFullInfo();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"Rang: {Rang}");
+            Console.WriteLine("Is free: {0}", this.freeStatus ? "yes" : "no");
+            Console.ResetColor();
+        }
     }
 }

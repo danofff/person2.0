@@ -10,6 +10,7 @@ namespace person
 {
     public class HumanGenerator
     {
+
         private static Random rnd = new Random();
         public Adult AdultGenerator()
         {
@@ -29,20 +30,48 @@ namespace person
             return randAdult;
         }
 
+        public Kid KidGenerator()
+        {
+            Kid randKid = new Kid { Gender = (Sex)rnd.Next(0, 2) };
+            Generator g = new Generator();
+            randKid.Name = g.GenerateDefault(randKid.Gender == Sex.female ? Gender.woman : Gender.man);
+            randKid.Name = randKid.Name.Replace("<center><b><font size=7>", "").Replace("\n", "").Replace("</font></b></center>", "");
+            randKid.Name = randKid.Name.Substring(1, randKid.Name.Length - 1);
+            //age and dateburth generator
+            randKid.Age = rnd.Next(0, 16);
+            randKid.DateOfBurth = GenerateBirthDate(randKid);
+            IdGeneratorForAdults idGen = new IdGeneratorForAdults();
+            randKid.Ids.Add(idGen.IdGenerator());
+            return randKid;
+        }
+
         //date burth generator
-        public DateTime GenerateBirthDate(Adult adult)
+        public DateTime GenerateBirthDate(Person p)
         {
             Random rnd = new Random();
             DateTime date = new DateTime();
-            int year = DateTime.Now.AddYears(-adult.Age).Year;
-            DateValidate:
-            while (!DateTime.TryParse(rnd.Next(1, 32) + "." + rnd.Next(1, DateTime.Now.Month+1) + "." + year, out date))
-            {
-                
+            if (rnd.Next(0, 2) == 0)
+            {               
+                int year = DateTime.Now.AddYears(-p.Age).Year;
+                int month = rnd.Next(1, DateTime.Now.Month + 1);
+                int day = rnd.Next(1, DateTime.Now.Day + 1);
+                date = Convert.ToDateTime(String.Format($"{year}.{month}.{day}"));
             }
-            if (date > DateTime.Now)
-                goto DateValidate;
-           
+            else
+            {
+                int year = DateTime.Now.AddYears(-p.Age-1).Year;
+                int day = rnd.Next(1,28);
+                int month = 0;
+                if (day > DateTime.Now.Day)
+                {
+                    month = rnd.Next(DateTime.Now.Month, 13);
+                }
+                else
+                {
+                    month = rnd.Next(DateTime.Now.Month + 1, 13);
+                }
+                date = Convert.ToDateTime(String.Format($"{year}.{month}.{day}"));
+            }
             return date;
         }
     }

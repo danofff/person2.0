@@ -25,9 +25,11 @@ namespace person.ModelHuman
         {
             Ids = new List<ID>();
             Parents = new List<Adult>();
+            IdGeneratorForAdults idGen = new IdGeneratorForAdults();
+            Ids.Add(idGen.IdGenerator());
         }
 
-        public void PrintShortInfo()
+        public virtual void PrintShortInfo()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("MAIN INFO: ");

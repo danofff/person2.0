@@ -7,6 +7,7 @@ using MasterPeople;
 using person;
 using System.Xml.Serialization;
 using System.IO;
+using person;
 
 namespace PoliceMaster
 {
@@ -67,6 +68,9 @@ namespace PoliceMaster
             CreateStation(null, policeStations);
 
         }
+
+        #region  CREATE Police People;
+        #endregion
 
     }
 }

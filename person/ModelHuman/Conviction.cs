@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using person.ModelHuman;
 
-namespace MasterCrime
+namespace person.ModelHuman
 {
     public enum convicType { robbery, homoside, drugs, murder, fight, not_udentify };
     public class Conviction
@@ -25,7 +24,7 @@ namespace MasterCrime
             Type = type;
             ConvictionCommit = start;
             personCommitConviction = person;
-            Adult a = new Adult();
+            personCommitConviction.Convictions.Add(this);
         }
 
         public override string ToString()

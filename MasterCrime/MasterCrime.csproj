@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="person">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\мои доки\Documents\Visual Studio 2015\Projects\TrySomeCode\person.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,8 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conviction.cs" />
+    <Compile Include="ConvictionGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\person\person.csproj">
+      <Project>{c0504bd6-877b-4724-992a-38005de8f1b2}</Project>
+      <Name>person</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PoliceMaster\PoliceMaster.csproj">
+      <Project>{436ae14c-d5e4-45b0-9233-4cdc878cd9ad}</Project>
+      <Name>PoliceMaster</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

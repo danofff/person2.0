@@ -45,10 +45,15 @@
     <Compile Include="City.cs" />
     <Compile Include="CityService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Region.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\person\person.csproj">
+      <Project>{c0504bd6-877b-4724-992a-38005de8f1b2}</Project>
+      <Name>person</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

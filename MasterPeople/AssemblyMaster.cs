@@ -10,55 +10,7 @@ namespace MasterPeople
 {
     public class AssemblyMaster
     {
-        #region CREATE REGION
-        /// <summary>
-        /// Путь к файлу региона
-        /// </summary>
-        public string pathToRegion { get; set; }
-        /// <summary>
-        /// Создание региона
-        /// </summary>
-        /// <param name="region"></param>
-        /// <returns>bool</returns>
-        public bool CreateRegion(Region region)
-        {
-            List<Region> regions = GetRegion();
-            regions.Add(region);
-
-            XmlSerializer formatter = new XmlSerializer(typeof(List<Region>));
-            try
-            {
-                using (FileStream fs = new FileStream(pathToRegion, FileMode.OpenOrCreate))
-                {
-                    formatter.Serialize(fs, regions);
-                }
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;                                
-            }        
-        }
-        /// <summary>
-        /// Проверка на существование файла региона
-        /// </summary>
-        /// <returns></returns>
-        public List<Region> GetRegion()
-        {
-            List<Region> regions = new List<Region>();
-            XmlSerializer formatter = new XmlSerializer(typeof(List<Region>));
-            FileInfo fi = new FileInfo(pathToRegion);
-            if (fi.Exists)
-            {
-                using (FileStream fs=new FileStream(pathToRegion, FileMode.OpenOrCreate))
-                {
-                    regions=(List<Region>)formatter.Deserialize(fs);
-                }              
-            }
-            return regions==null?new List<Region>():regions; 
-        }
-        #endregion
-
+        
         #region CREATE CITY
         public string pathToCities { get; set; }
         public bool CreateCity(City city)
@@ -134,5 +86,9 @@ namespace MasterPeople
             return cityServices == null ? new List<CityService>() : cityServices;
         }
         #endregion
+
+        #region CREATE PEOPLE
+
+        #endregion  
     }
 }

@@ -5,13 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using MasterPeople;
 using PoliceMaster;
+using person.ModelHuman;
+using person;
+using static System.Console;
 
 namespace SmartCity
 {
     class Program
     {
         static void Main(string[] args)
-        {
+        {          
             AssemblyMaster am = new AssemblyMaster();
             am.pathToCityServices = "smartCityService.xml";
 
@@ -21,20 +24,25 @@ namespace SmartCity
             am.CreateCityCervise(cs);
 
             am.pathToCities = "smartCityCities.xml";
+
+            // create city
             City city = new City();
             city.CityName = "Алматы";
-            city.Population = 1787964;
-            city.Area = 682;
             city.Services = new List<CityService> { cs };
-            am.CreateCity(city);
 
-            am.pathToRegion = "smartCityRegion.xml";
-            Region region = new Region();
-            region.RegionName = "Алматинская область";
-            region.Population = 21241123;
-            region.CapitalRegion = city;
-            region.cities = null;
-            am.CreateRegion(region);
+            ForegroundColor = ConsoleColor.Green;
+            WriteLine("Подождите, идет заселение людей в город");
+            HumanGenerator humanGen = new HumanGenerator();
+            for (int i = 0; i < 20; i++)
+            {
+                city.citizens.Add(humanGen.AdultGenerator());
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                city.citizens.Add(humanGen.KidGenerator());
+            }
+            Clear();
+                                   
 
             MasterPolice pm = new MasterPolice();
             pm.pathToStation = "policeStations.xml";
@@ -43,7 +51,6 @@ namespace SmartCity
             ps.CodePoliceStation=001;
             ps.NamePoliceStation = "Тимирязева";
             pm.CreateStation(ps);
-
         }
     }
 }
