@@ -9,6 +9,7 @@ namespace MasterPeople
     [Serializable]
     public class CityService
     {
+        public int districtNumber { get; set; }
         public int SeviceCode { get; set; }
         public string ServiceName { get; set; }
     }

@@ -14,9 +14,12 @@ namespace SmartCity
     class Program
     {
         static void Main(string[] args)
-        {          
+        {
+                                 
             AssemblyMaster am = new AssemblyMaster();
             am.pathToCityServices = "smartCityService.xml";
+
+            //CREATE DISTRICTS
 
             CityService cs = new CityService();
             cs.ServiceName = "Полиция";
@@ -25,15 +28,18 @@ namespace SmartCity
 
             am.pathToCities = "smartCityCities.xml";
 
+
+
             // create city
             City city = new City();
             city.CityName = "Алматы";
             city.Services = new List<CityService> { cs };
 
             ForegroundColor = ConsoleColor.Green;
+            //заселение людей в город
             WriteLine("Подождите, идет заселение людей в город");
             HumanGenerator humanGen = new HumanGenerator();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 15; i++)
             {
                 city.citizens.Add(humanGen.AdultGenerator());
             }
@@ -42,7 +48,9 @@ namespace SmartCity
                 city.citizens.Add(humanGen.KidGenerator());
             }
             Clear();
-                                   
+            am.CreateCity(city);
+
+                                             
 
             MasterPolice pm = new MasterPolice();
             pm.pathToStation = "policeStations.xml";

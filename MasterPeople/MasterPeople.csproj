@@ -44,6 +44,7 @@
     <Compile Include="AssemblyMaster.cs" />
     <Compile Include="City.cs" />
     <Compile Include="CityService.cs" />
+    <Compile Include="District.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +54,10 @@
     <ProjectReference Include="..\person\person.csproj">
       <Project>{c0504bd6-877b-4724-992a-38005de8f1b2}</Project>
       <Name>person</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PoliceMaster\PoliceMaster.csproj">
+      <Project>{436ae14c-d5e4-45b0-9233-4cdc878cd9ad}</Project>
+      <Name>PoliceMaster</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

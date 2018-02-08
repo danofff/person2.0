@@ -11,13 +11,11 @@ namespace MasterPeople
     public class City
     {
         public string CityName { get; set; }
-        public List<CityService> Services { get; set; }
-        public List<Person> citizens { get; set; }
-        public string Coordinates { get; set; }
+        public List<District> Districts { get; set; }
 
         public City()
         {
-            citizens = new List<Person>();
-        }
+            Districts = new List<District>();
+        }             
     }
 }

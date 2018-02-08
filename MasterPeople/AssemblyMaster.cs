@@ -87,8 +87,6 @@ namespace MasterPeople
         }
         #endregion
 
-        #region CREATE PEOPLE
 
-        #endregion  
     }
 }
