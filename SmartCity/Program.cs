@@ -27,9 +27,7 @@ namespace SmartCity
                 city = GenCity.generateCity();
             }
 
-            am.CreateCity(city);
-            city.Districts[0].PoliceStat.workers[0].PrintShortInfo();
-
+            am.CreateCity(city);                  
 
 
             ForegroundColor = ConsoleColor.Red;

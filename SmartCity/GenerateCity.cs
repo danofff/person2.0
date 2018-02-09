@@ -54,13 +54,15 @@ namespace SmartCity
                 }
             }
             //прописываем в район полицейскую станцию
+            
             signPoliceStationToDistrict(d);        
             return d;
         }
 
         private void signPoliceStationToDistrict(District d)
-        {         
+        {
             //загружаем имеющийся список полицейских станций
+            Console.WriteLine("Прописываем в район полицейскую станцию");
             AssemblyMaster asMasterForPoliceStations = new AssemblyMaster();
             asMasterForPoliceStations.pathToPoliceStations = "policeStations.xml";
             List<PoliceStation> PoliceStations = new List<PoliceStation>();
@@ -103,7 +105,6 @@ namespace SmartCity
             {
                 pStation.workers.Add(pg.PoliceGenerate());
             }      
-
             return pStation;
         }
 
