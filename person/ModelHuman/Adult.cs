@@ -39,7 +39,7 @@ namespace person.ModelHuman
             {
                 Console.WriteLine("Name: {0}", item.Name);
                 Console.WriteLine("Age: {0}", item.Age);
-                Console.WriteLine("Date of burth: {0:d}", item.DateOfBurth);
+                //Console.WriteLine("Date of burth: {0:d}", item.DateOfBurth);
             }
             Console.WriteLine("Married: {0}", this.IsMarried ? "yes" : "no");
             Console.WriteLine("Working: {0}", this.IsWorking ? "yes" : "no");

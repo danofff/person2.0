@@ -14,7 +14,7 @@ namespace person.ModelHuman
     {
         public string Name { get; set; }
         public int Age { get; set; }
-        public DateTime DateOfBurth { get; set; }
+        //public DateTime DateOfBurth { get; set; } -удалил так как грузит систему генерация даты рождения
         public Sex Gender { get; set; }
         public List<ID> Ids { get; set; }
         public List<Adult> Parents { get; set; }
@@ -24,9 +24,7 @@ namespace person.ModelHuman
         protected Person()
         {
             Ids = new List<ID>();
-            Parents = new List<Adult>();
-            IdGeneratorForAdults idGen = new IdGeneratorForAdults();
-            Ids.Add(idGen.IdGenerator());
+            Parents = new List<Adult>();            
         }
 
         public virtual void PrintShortInfo()
@@ -36,7 +34,7 @@ namespace person.ModelHuman
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Name: {0}", this.Name);
             Console.WriteLine("Age: {0}", this.Age);
-            Console.WriteLine("Date of birth: {0:d}", DateOfBurth);
+            //Console.WriteLine("Date of birth: {0:d}", DateOfBurth);
             Console.WriteLine("Gender: {0}", this.Gender);
             Console.WriteLine("Id's Info:");
 
@@ -51,7 +49,7 @@ namespace person.ModelHuman
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Name: {0}", Name);
             Console.WriteLine("Age: {0}", Age);
-            Console.WriteLine("Date of birth: {0:d}", DateOfBurth);
+            //Console.WriteLine("Date of birth: {0:d}", DateOfBurth);
             Console.WriteLine("Gender: {0}", Gender);
             Console.WriteLine("Id's Info:");
 
@@ -67,7 +65,7 @@ namespace person.ModelHuman
             {
                 Console.WriteLine("Name: {0}", item.Name);
                 Console.WriteLine("Age: {0}", item.Age);
-                Console.WriteLine("Date of burth: {0:d}", item.DateOfBurth);
+                //Console.WriteLine("Date of burth: {0:d}", item.DateOfBurth);
             }
         }
     }

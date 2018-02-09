@@ -15,7 +15,6 @@ namespace person
         public Adult AdultGenerator()
         {
             Adult randAdult = new Adult {Gender = (Sex) rnd.Next(0, 2)};
-            // gendor generator
             //name generator
             Generator g = new Generator();
             randAdult.Name = g.GenerateDefault(randAdult.Gender == Sex.female ? Gender.woman : Gender.man);
@@ -23,10 +22,9 @@ namespace person
             randAdult.Name = randAdult.Name.Substring(1, randAdult.Name.Length - 1);
             //age and dateburth generator
             randAdult.Age = rnd.Next(16, 100);
-            randAdult.DateOfBurth=GenerateBirthDate(randAdult);
-            IdGeneratorForAdults idGen = new IdGeneratorForAdults();
-            randAdult.Ids.Add(idGen.IdGenerator());
-                     
+            //randAdult.DateOfBurth=GenerateBirthDate(randAdult); 
+            IdGeneratorForAdults id = new IdGeneratorForAdults();
+            randAdult.Ids.Add(id.IdGenerator());                 
             return randAdult;
         }
 
@@ -39,9 +37,9 @@ namespace person
             randKid.Name = randKid.Name.Substring(1, randKid.Name.Length - 1);
             //age and dateburth generator
             randKid.Age = rnd.Next(0, 16);
-            randKid.DateOfBurth = GenerateBirthDate(randKid);
-            IdGeneratorForAdults idGen = new IdGeneratorForAdults();
-            randKid.Ids.Add(idGen.IdGenerator());
+            //randKid.DateOfBurth = GenerateBirthDate(randKid);
+            IdGeneratorForAdults id = new IdGeneratorForAdults();
+            randKid.Ids.Add(id.IdGenerator());
             return randKid;
         }
 

@@ -7,9 +7,9 @@ using person.ModelIdentity;
 
 namespace person
 {
-    class IdGeneratorForAdults
+    public class IdGeneratorForAdults
     {
-        private static Random rnd = new Random();
+        private Random rnd = new Random();
         public ID IdGenerator()
         {
             ID randomId = new ID();          

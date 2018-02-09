@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="AssemblyMaster.cs" />
     <Compile Include="City.cs" />
-    <Compile Include="CityService.cs" />
     <Compile Include="District.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using GeneratorName;
 using person.ModelHuman;
-using GeneratorName;
+using person;
+
 
 namespace PoliceMaster
 {
     public class PoliceGenerator
     {
-
         private static Random rnd = new Random();
         public PolicePeople PoliceGenerate()
         {
@@ -24,13 +24,15 @@ namespace PoliceMaster
             randPolice.Name = randPolice.Name.Substring(1, randPolice.Name.Length - 1);
             //age and dateburth generator
             randPolice.Age = rnd.Next(16, 55);
-            randPolice.DateOfBurth=GenerateBirthDate(randPolice);
+            //randPolice.DateOfBurth=GenerateBirthDate(randPolice);
+            IdGeneratorForAdults idGen = new IdGeneratorForAdults();
+            randPolice.Ids.Add(idGen.IdGenerator());
             randPolice.Rang = (rang)rnd.Next(0, 5);                     
             return randPolice;
         }
 
         //date burth generator
-        public DateTime GenerateBirthDate(Person p)
+        private DateTime GenerateBirthDate(Person p)
         {
             Random rnd = new Random();
             DateTime date = new DateTime();
