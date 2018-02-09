@@ -15,7 +15,7 @@ namespace person.ModelHuman
         public bool IsWorking { get; set; } = false;
         public List<School> Schools { get; set; }
         public List<College> Colleges { get; set; }
-        public List<Conviction> Convictions { get; set; }
+       
 
         //конструктор
         public Adult():this(new List<School>()){}
@@ -26,11 +26,9 @@ namespace person.ModelHuman
         public Adult(List<School> schools, List<College> colleges,List<Kid> kids) : base()//<<<<<<---------
         {
             Schools = schools;
-            Colleges = colleges;
-            Convictions = new List<Conviction>();
+            Colleges = colleges;       
             Kids = kids;
         }
-
         public override void PrintFullInfo()
         {
             base.PrintFullInfo();

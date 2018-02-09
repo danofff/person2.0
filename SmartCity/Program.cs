@@ -17,8 +17,9 @@ namespace SmartCity
     {
         static void Main(string[] args)
         {
+            
                                                     
-            AssemblyMaster am = new AssemblyMaster();
+            /*AssemblyMaster am = new AssemblyMaster();
             am.pathToCity = "city.xml";
             City city = am.GetCity();
             if (city == null)
@@ -27,7 +28,7 @@ namespace SmartCity
                 city = GenCity.generateCity();
             }
 
-            am.CreateCity(city);                  
+            am.CreateCity(city);  */                
 
 
             ForegroundColor = ConsoleColor.Red;

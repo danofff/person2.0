@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace person.ModelHuman
 {
     public enum Sex { male, female };
-
+    [Serializable]
     public abstract class Person
     {
         public string Name { get; set; }
@@ -18,13 +18,13 @@ namespace person.ModelHuman
         public Sex Gender { get; set; }
         public List<ID> Ids { get; set; }
         public List<Adult> Parents { get; set; }
-
-        protected invalid inv { get; set; } = invalid.none;
+        public List<Conviction> Convictions { get; set; } = new List<Conviction>();
+        public bool inv { get; set; } = false;
 
         protected Person()
         {
             Ids = new List<ID>();
-            Parents = new List<Adult>();            
+            Parents = new List<Adult>();                                   
         }
 
         public virtual void PrintShortInfo()
@@ -52,7 +52,7 @@ namespace person.ModelHuman
             //Console.WriteLine("Date of birth: {0:d}", DateOfBurth);
             Console.WriteLine("Gender: {0}", Gender);
             Console.WriteLine("Id's Info:");
-
+            Console.WriteLine("Invalid: {0}",inv);
             foreach (var item in this.Ids)
                 item.PrintIdInfo();
 

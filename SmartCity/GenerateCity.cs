@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MasterPeople;
 using person;
 using PoliceMaster;
+using person.ModelHuman;
 
 namespace SmartCity
 {
@@ -51,6 +52,10 @@ namespace SmartCity
                 if (i % 3 == 0)
                 {
                     d.Citizens.Add(hg.KidGenerator());
+                }
+                if (i % 5 == 0)
+                {
+                    d.Citizens[i].inv = true;
                 }
             }
             //прописываем в район полицейскую станцию
