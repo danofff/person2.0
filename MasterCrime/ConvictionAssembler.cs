@@ -15,7 +15,6 @@ namespace MasterCrime
     {
         public string pathToConvictions { get; set; }
               
-        //public List<Conviction> ConvictionsList { get; set; } = new List<Conviction>();
         private City city { get; set; }
 
         public ConvictionAssembler(City c)
@@ -25,26 +24,30 @@ namespace MasterCrime
 
         public Conviction generateConviction(string pathToConv)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Где-то, кто-то совершил преступление!!!");
             pathToConvictions = pathToConv;
             Conviction conviction = new Conviction();
             Random rnd = new Random();
             conviction.ConvictionType = (convicType)rnd.Next(0, 6);
             conviction.ConvictionCommitDate = DateTime.Now.AddHours(-rnd.Next(0, 24));
-            int distNumber = rnd.Next(1, city.Districts.Count + 1);
-            
+            int distNumber = rnd.Next(0, city.Districts.Count);
+            conviction.DistrictOfConviction = distNumber;
+
             //определяем лицо совершившее преступление
+            int i = 0;
             while (true)
             {
-                int i = rnd.Next(0, city.Districts[distNumber].Citizens.Count + 1);               
-                if (city.Districts[distNumber].Citizens[i].GetType().ToString() == "Adult")
+                i = rnd.Next(0, city.Districts[rnd.Next(0,city.Districts.Count)].Citizens.Count);               
+                if (city.Districts[distNumber].Citizens[i].GetType().ToString() == "person.ModelHuman.Adult")
                 {
-                    conviction.personCommitConviction = city.Districts[distNumber].Citizens[i];
-                    conviction.personCommitConviction.Convictions.Add(conviction);
+                    conviction.personCommitConviction = city.Districts[distNumber].Citizens[i].Name;
+                    city.Districts[distNumber].Citizens[i].Convictions.Add(conviction);                
                     break;
                 }
             }
             CreateConviction(conviction);
-
+            Console.ResetColor();
             return conviction;
         }
 
@@ -63,8 +66,10 @@ namespace MasterCrime
                 }
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.HelpLink);
                 return false;
             }
         }
@@ -73,6 +78,7 @@ namespace MasterCrime
             List<Conviction> Convictions = new List<Conviction>();
             XmlSerializer formatter = new XmlSerializer(typeof(List<Conviction>));
             FileInfo fi = new FileInfo(pathToConvictions);
+
             if (fi.Exists)
             {
                 using (FileStream fs = new FileStream(pathToConvictions, FileMode.OpenOrCreate))
@@ -84,7 +90,7 @@ namespace MasterCrime
         }
 
         //расследование преступления
-        public void Investigate()
+        public void Investigate(Conviction conviction)
         {
 
         }    

@@ -42,7 +42,7 @@ namespace SmartCity
             District d = new District();
             districtCountHandler += 1;
             d.DistrictID = districtCountHandler;
-            Console.WriteLine("Генерироуем район {0}, генерируем для него жителей, немного подождите",d.DistrictID);
+            Console.WriteLine("Генерируем район {0}, генерируем для него жителей, немного подождите",d.DistrictID);
 
             //генерируем людей для нового района
             HumanGenerator hg = new HumanGenerator();                      
@@ -66,12 +66,15 @@ namespace SmartCity
 
         private void signPoliceStationToDistrict(District d)
         {
-            //загружаем имеющийся список полицейских станций
             Console.WriteLine("Прописываем в район полицейскую станцию");
+
+            //загружаем имеющийся список полицейских станций
             AssemblyMaster asMasterForPoliceStations = new AssemblyMaster();
             asMasterForPoliceStations.pathToPoliceStations = "policeStations.xml";
             List<PoliceStation> PoliceStations = new List<PoliceStation>();
             PoliceStations = asMasterForPoliceStations.GetPoliceStations();
+
+            //если список полицейских станций пуст генерируем новую полицейскую станцию
             if (PoliceStations == null)
             {
                 d.PoliceStat = GeneratePoliceStation();
@@ -82,6 +85,8 @@ namespace SmartCity
                 asMasterForPoliceStations.CreatePoliceStation(d.PoliceStat);
                 return;                               
             }
+            //если список полицейских станций не пуст, проверяем, прописана 
+            //ли в район полицейская станция если нет, прописываем ее в район
             for (int i = 0; i < PoliceStations.Count; i++)
             {
                 if (!PoliceStations[i].ifItPlaceInDistrict)
@@ -101,7 +106,7 @@ namespace SmartCity
                 asMasterForPoliceStations.CreatePoliceStation(d.PoliceStat);
             }          
         }
-
+        //метод генерирования полицейского участка и наполнения его людьми
         private PoliceStation GeneratePoliceStation()
         {
             PoliceStation pStation = new PoliceStation();
@@ -112,7 +117,5 @@ namespace SmartCity
             }      
             return pStation;
         }
-
-
     }
 }

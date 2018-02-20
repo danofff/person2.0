@@ -51,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MasterCrime\MasterCrime.csproj">
+      <Project>{a4e4ee22-3797-4feb-8ede-4200e3ed5c45}</Project>
+      <Name>MasterCrime</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MasterPeople\MasterPeople.csproj">
       <Project>{3dbb36fc-0841-4fb5-b58f-207d2f1c1aba}</Project>
       <Name>MasterPeople</Name>

@@ -8,6 +8,7 @@ using person.ModelIdentity;
 
 namespace person.ModelHuman
 {
+    [Serializable]
     public class Adult : Person
     {
         public List<Kid> Kids { get; set; }
@@ -47,9 +48,6 @@ namespace person.ModelHuman
 
             foreach (var item in Colleges)
                 item.PrintEducationInfo();
-
-            foreach (var item in Convictions)
-                Console.WriteLine(item);
 
             Console.ResetColor();
         }

@@ -8,6 +8,9 @@ using MasterPeople;
 using PoliceMaster;
 using person.ModelHuman;
 using person;
+using MasterCrime;
+using System.Xml.Serialization;
+using System.IO;
 using static System.Console;
 
 
@@ -17,19 +20,26 @@ namespace SmartCity
     {
         static void Main(string[] args)
         {
-            
-                                                    
-            /*AssemblyMaster am = new AssemblyMaster();
-            am.pathToCity = "city.xml";
-            City city = am.GetCity();
+                                         
+           AssemblyMaster am = new AssemblyMaster();
+           am.pathToCity = "city.xml";
+           City city = am.GetCity();
             if (city == null)
             {
                 GenerateCity GenCity = new GenerateCity(4);
                 city = GenCity.generateCity();
             }
 
-            am.CreateCity(city);  */                
+            am.CreateCity(city);                             
 
+            //создаем класс управляющий преступлениями
+            ConvictionAssembler convAssembl = new ConvictionAssembler(city);
+
+            //генерируем преступление
+            Conviction conv = convAssembl.generateConviction("convictions.xml");
+
+            //расследуем преступление
+            convAssembl.Investigate(conv);
 
             ForegroundColor = ConsoleColor.Red;
         }

@@ -18,13 +18,15 @@ namespace person.ModelHuman
         public Sex Gender { get; set; }
         public List<ID> Ids { get; set; }
         public List<Adult> Parents { get; set; }
-        public List<Conviction> Convictions { get; set; } = new List<Conviction>();
+
+        public List<Conviction> Convictions { get; set; }
         public bool inv { get; set; } = false;
 
         protected Person()
         {
             Ids = new List<ID>();
-            Parents = new List<Adult>();                                   
+            Parents = new List<Adult>();
+            Convictions = new List<Conviction>();                           
         }
 
         public virtual void PrintShortInfo()
