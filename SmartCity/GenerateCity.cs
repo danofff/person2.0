@@ -77,9 +77,8 @@ namespace SmartCity
             //если список полицейских станций пуст генерируем новую полицейскую станцию
             if (PoliceStations == null)
             {
-                d.PoliceStat = GeneratePoliceStation();
-                Console.WriteLine("Введите название полицейской станции {0} района", d.DistrictID);              
-                d.PoliceStat.NamePoliceStation = Console.ReadLine();
+                d.PoliceStat = GeneratePoliceStation();                              
+                d.PoliceStat.NamePoliceStation = $"Полицейская станция  {d.DistrictID} района";
                 d.PoliceStat.ifItPlaceInDistrict = true;
                 d.PoliceStat.CodePoliceStation = d.DistrictID;
                 asMasterForPoliceStations.CreatePoliceStation(d.PoliceStat);
@@ -100,8 +99,7 @@ namespace SmartCity
             {
                 d.PoliceStat = GeneratePoliceStation();
                 d.PoliceStat.ifItPlaceInDistrict = true;
-                Console.WriteLine("Введите название полицейской станции {0} района", d.DistrictID);               
-                d.PoliceStat.NamePoliceStation = Console.ReadLine();
+                d.PoliceStat.NamePoliceStation = $"Полицейская станция  {d.DistrictID} района";
                 d.PoliceStat.CodePoliceStation = d.DistrictID;
                 asMasterForPoliceStations.CreatePoliceStation(d.PoliceStat);
             }          

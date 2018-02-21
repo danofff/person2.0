@@ -15,6 +15,8 @@ namespace person.ModelHuman
         public DateTime ConvictionCommitDate { get; set; }
         public string personCommitConviction { get; set; }
         public int DistrictOfConviction { get; set; }
+
+        public string Investiagator { get; set; }
         public Conviction():this(convicType.not_udentify){ }
         public Conviction(convicType type):this(type,DateTime.Now){}
         public Conviction(convicType type, DateTime start):this(type,start, "Nobody")

@@ -23,7 +23,7 @@ namespace PoliceMaster
             randPolice.Name = randPolice.Name.Replace("<center><b><font size=7>", "").Replace("\n", "").Replace("</font></b></center>", "");
             randPolice.Name = randPolice.Name.Substring(1, randPolice.Name.Length - 1);
             //age and dateburth generator
-            randPolice.Age = rnd.Next(16, 55);
+            randPolice.Age = rnd.Next(21, 55);
             //randPolice.DateOfBurth=GenerateBirthDate(randPolice);
             IdGeneratorForAdults idGen = new IdGeneratorForAdults();
             randPolice.Ids.Add(idGen.IdGenerator());

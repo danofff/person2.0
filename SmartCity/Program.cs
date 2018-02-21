@@ -36,10 +36,15 @@ namespace SmartCity
             ConvictionAssembler convAssembl = new ConvictionAssembler(city);
 
             //генерируем преступление
-            Conviction conv = convAssembl.generateConviction("convictions.xml");
+            Conviction conv = convAssembl.generateConviction();
 
             //расследуем преступление
             convAssembl.Investigate(conv);
+
+            //создаем архив
+            Arhiv arhiv = new Arhiv();
+            //печатаем архив преступлений
+            arhiv.printArhiv();
 
             ForegroundColor = ConsoleColor.Red;
         }
